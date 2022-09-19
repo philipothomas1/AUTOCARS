@@ -1,0 +1,435 @@
+  {% extends 'base.html' %}
+  {% load static %}
+{% load crispy_forms_tags %}
+  {% block content %}
+
+    <div class="content">
+    <div class="container-fluid">
+      
+      <div class="row"> 
+        <!-- Slider -->
+        <div class="home-slider5">
+          <div id="thmg-slideshow" class="thmg-slideshow">
+            <div id='rev_slider_4_wrapper' class='rev_slider_wrapper fullwidthbanner-container' >
+              <div id='rev_slider_4' class='rev_slider fullwidthabanner'>
+                <ul>
+                  {% for banner in homebanner1 %}
+                  <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='images/slide-img1.jpg'><img src="{{ banner.banner_image1.url }}"  data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
+                    <div class="container">
+                      <div class="content_slideshow">
+                        <div class="row">
+                          <div>
+                            <div class="info">
+                              <div class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'><span>{{ banner.first_line_words }}</span> </div>
+                              <div class='tp-caption LargeTitle sfl  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3; white-space:nowrap;'><span style="font-weight:normal; display:block">{{ banner.second_line_words }}</span>{{ banner.third_line_words }}</div>
+                              <div class='tp-caption Title sft  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1450' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>{{ banner.fourth_line_words }}</div>
+                              <!-- <div class='tp-caption sfb  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><a href='#' class="buy-btn">Book Appointment</a> </div> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  {% endfor %}
+                  {% for banner in homebanner2 %}
+                  <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='images/slide-img2.jpg'><img src="{{ banner.banner_image2.url }}" data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
+                    <div class="container">
+                      <div class="content_slideshow">
+                        <div class="row">
+                          <div>
+                            <div class="info">
+                              <div class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'><span>{{ banner.first_line_words }}</span> </div>
+                              <div class='tp-caption LargeTitle sfl  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3; white-space:nowrap;'><span style="font-weight:normal; display:block">{{ banner.second_line_words }}</span>{{ banner.third_line_words }}</div>
+                              <div class='tp-caption Title sft  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1450' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>{{ banner.fourth_line_words }}.</div>
+                              <!-- <div class='tp-caption sfb  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><a href='#' class="buy-btn">Book Appointment</a> </div> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  {% endfor %}
+                </ul>
+                <div class="tp-bannertimer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--Category slider Start-->
+    
+       <!--  <div class="section-filter">
+            <div >
+              <h2>Find your right car</h2>
+              <form method="GET" action="{% url 'cars:search_results' %}">
+                <div class="form-group">
+            <input name="q" value="{{request.GET.q}}"  class="form-control" type="text" placeholder="Search for Car Keyword... "  />
+          </div> -->
+                <!-- <div class="btn-group bootstrap-select">
+                  <select class="selectpicker" data-width="100%" tabindex="-98">
+                    <option>Select Make</option>
+                    <option>Make 1</option>
+                    <option>Make 2</option>
+                    <option>Make 3</option>
+                  </select>
+                </div>
+                <div class="btn-group bootstrap-select">
+                  <select class="selectpicker" data-width="100%" tabindex="-98">
+                    <option>Select Car Status</option>
+                    <option>Status 1</option>
+                    <option>Status 2</option>
+                    <option>Status 3</option>
+                  </select>
+                </div>
+                <div class="btn-group bootstrap-select">
+                  <select class="selectpicker" data-width="100%" tabindex="-98">
+                    <option>Select Model</option>
+                    <option>Model 1</option>
+                    <option>Model 2</option>
+                    <option>Model 3</option>
+                  </select>
+                </div>
+                <div class="btn-group bootstrap-select">
+                  <select class="selectpicker" data-width="100%" tabindex="-98">
+                    <option>Select All Locations</option>
+                    <option>Location 1</option>
+                    <option>Location 2</option>
+                    <option>Location 3</option>
+                  </select>
+                </div>
+                <div class="btn-group bootstrap-select">
+                  <select class="selectpicker" data-width="100%" tabindex="-98">
+                    <option>Select Year</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                    <option>2015</option>
+                  </select>
+                </div> -->
+          <!--       <div class="ui-filter-slider">
+                  <div class="sidebar-widget-body m-t-10">
+                    <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">$200.00</span> <span class="pull-right">$800.00</span> </span>
+                      <input type="text" class="price-slider" value="" style="display:block" >
+                    </div>
+                    
+                  </div>
+                </div> -->
+            <!--     <div>
+                  <div class="b-filter__btns">
+                    <button class="btn btn-lg btn-primary" type="submit">search vehicle</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div> -->
+
+ 
+
+      <div class="s003">
+<!--   <div class="section-filter">
+  <div class="b-filter__inner bg-grey container"> -->
+      <form method="GET" action="{% url 'cars:search_results' %}">
+        <div class="inner-form">
+          <div class="input-field first-wrap" style=" padding: 10px 30px;">
+            <div class="form-group">
+
+
+               
+
+
+            </div>
+          </div>
+          <div class="input-field second-wrap">
+            <input name="q" value="{{request.GET.q}}" type="text" placeholder="Search for cars,price  or mileage... "  />
+          </div>
+          <div class="input-field third-wrap">
+            <button class="btn-search" type="submit">
+              <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </form>
+<!--     </div>
+</div>  -->   
+    </div>
+    <!--Category silder End-->
+
+       <div id="top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"><img src="{% static 'images/speakers.png' %}" alt="promotion-banner1"> </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> <img src="{% static 'images/schedule.png' %}" alt="promotion-banner2"> </div>
+        </div>
+      </div>
+    </div>
+    
+
+    
+    <!-- best Pro Slider -->
+    <section class=" wow bounceInUp animated">
+      <div class="hot_deals slider-items-products container">
+        <div class="new_title">
+          <h2>Latest Cars Available</h2>
+          <!-- <div class="box-timer">
+            <div class="countbox_1 timer-grid"></div>
+          </div> -->
+        </div>
+        <div id="hot_deals" class="product-flexslider hidden-buttons">
+          <div class="slider-items slider-width-col4 products-grid">
+          	{% for object in queryset %}
+            <div class="item">
+              <div class="item-inner">
+                <div class="item-img">
+                  <div class="item-img-info"><a href="{{ object.get_absolute_url }}" title="{{object.car_name}}" class="product-image"><img src="{{ object.car_main_image.url }}" alt="Retis lapen casen"></a>
+                    <div class="new-label new-top-left">Used</div>
+                   <!--  <div class="sale-label sale-top-left">-15%</div> -->
+                
+                  </div>
+                </div>
+                <div class="item-info">
+                  <div class="info-inner">
+                    <div class="item-title"><a href="{{ object.get_absolute_url }}" title="{{ object.car_name }}" style="text-transform: uppercase;">{{object.car_name}}</a> </div>
+                    <div class="item-content">
+                
+                      <div class="item-price">
+                        <div class="price-box"><span class="regular-price"><span class="price">TSH {{object.price}}</span> </span> </div>
+                      </div>
+                      <div class="other-info">
+                        <div class="col-km"><i class="fa fa-tachometer"></i> {{object.mileage}}km</div>
+                        <div class="col-engine"><i class="fa fa-gear"></i> {{object.transmission}}</div>
+                        <div class="col-date"><i class="fa fa-calendar" aria-hidden="true"></i>{{object.year}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            
+        
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  
+  </div>
+  
+  <!-- best Pro Slider -->
+  <section class=" wow bounceInUp animated">
+    <div class="best-pro slider-items-products container">
+      <div class="new_title">
+        <h2>Auto Parts</h2>
+      </div>
+      <div id="best-seller" class="product-flexslider hidden-buttons">
+        <div class="slider-items slider-width-col4 products-grid">
+          {% for spares in autoparts %}
+          <div class="item">
+            <div class="item-inner">
+              <div class="item-img">
+                <div class="item-img-info"><a href="{{spares.get_absolute_url}}" title="{{ spares.spare_parts_name }}" class="product-image"><img src="{{spares.auto_part_image.url}}" alt="Retis lapen casen"></a>
+                  <div class="new-label new-top-left">{{spares.condition}}</div>
+                  <!-- <div class="sale-label sale-top-left">-15%</div> -->
+                  <div class="item-box-hover">
+                 
+                  </div>
+                </div>
+              </div>
+              <div class="item-info">
+                <div class="info-inner">
+                  <div class="item-title"><a href="{{ spares.get_absolute_url }}" title="{{ spares.spare_parts_name }}" style="text-transform: uppercase;">{{spares.spare_parts_name}}</a> </div>
+                  <div class="item-content">
+                   
+                    <div class="item-price">
+                      <div class="price-box"><span class="regular-price"><span class="price">TSH {{spares.price}}</span> </span> </div>
+                    </div>
+                    <div class="other-info">
+                      <div class="col-km"><i class="fa fa-tachometer"></i> {{spares.category}}</div>
+                      <div class="col-engine"><i class="fa fa-gear"></i> {{spares.make}}</div>
+                      <div class="col-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{spares.condition}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Home Lastest Blog Block -->
+  <div class="latest-blog wow bounceInUp animated animated container"> 
+    <!--exclude For version 6 -->
+    <div class="blog-home-inner">
+      <div class="blog-title">
+        <h2>Deluxe Cars</h2>
+      </div>
+      <!--For version 1,2,3,4,5,6,8 -->
+      <div class="row">
+        {% for deluxecars in qs %}
+        <div class="col-lg-4 col-md-4 col-xs-12 col-sm-4 blog-post">
+          <div class="blog_inner">
+            <div class="blog-img"> <a href="{{ deluxecars.get_absolute_url }}"> <img src="{{ deluxecars.car_main_image.url }}" alt="{{ deluxecars.car_name }}"> </a> </div>
+            <!--blog-img-->
+            <div class="blog-info">
+              <div class="post-date"><span class="entry-date">{{deluxecars.price}}</span> </div>
+            <!--   <ul class="post-meta">
+                <li><i class="fa fa-user"></i>Posted by <a href="#">admin</a> </li>
+                <li><i class="fa fa-comments"></i><a href="#">4 comments</a> </li>
+              </ul> -->
+              <h3><a href="{{ deluxecars.get_absolute_url }}" style="text-transform: uppercase;">{{deluxecars.car_name}}</a></h3>
+              <!-- <p>Fusce ac pharetra urna. Duis non lacus sit amet lacus interdum facilisis sed non est. Ut mi metus, semper eu dictum nec...</p> -->
+            </div>
+          </div>
+          <!--blog_inner--> 
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+    <!--END For version 1,2,3,4,5,6,8 --> 
+    <!--exclude For version 6 --> 
+    <!--container--> 
+  </div>
+  <div class="logo-brand container">
+    <div class="brand-title">
+      <h2>Popular Brands</h2>
+    </div>
+    <div class="slider-items-products">
+      <div id="brand-slider" class="product-flexslider hidden-buttons">
+        <div class="slider-items slider-width-col6"> 
+          <!-- Item -->
+          <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:toyotacars' %}"><img src="{% static 'images/toyota-popular.png' %}" alt="Image"></a></div>
+          </div>
+          <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:nissancars' %}"><img src="{% static 'images/nissan-popular.png' %}" alt="Image"></a></div>
+          </div>
+          <!-- End Item --> 
+          <!-- Item -->
+          <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:subarucars' %}"><img src="{% static 'images/Subaru-logo.png' %}" alt="Image"></a></div>
+          </div>
+          <!-- <div class="item">
+            <div class="logo-item"><a href="#"><img src="{% static 'images/brand4.png' %}" alt="Image"></a></div>
+          </div> -->
+          <!-- End Item --> 
+          <!-- Item -->
+          <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:mercedesbenzcars' %}"><img src="{% static 'images/Mercedes-Benz-logo.jpg' %}" alt="Image"></a></div>
+          </div>
+          <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:mitsubishicars' %}"><img src="{% static 'images/Mitsubishi-logo.jpg' %}" alt="Image"></a></div>
+          </div>
+          <!-- End Item --> 
+          <!-- Item -->
+          <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:bmwcars' %}"><img src="{% static 'images/bmw-popular.png' %}" alt="Image"></a></div>
+          </div>
+          <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:hondacars' %}"><img src="{% static 'images/honda.png' %}" alt="Image"></a></div>
+          </div>
+          <!-- End Item --> 
+          <!-- Item -->
+          <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:suzukicars' %}"><img src="{% static 'images/suzuki.jpg' %}" alt="Image"></a></div>
+          </div>
+          <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:volkswagencars' %}"><img src="{% static 'images/volkswagen.jpg' %}" alt="Image"></a></div>
+          </div>
+          <!-- End Item --> 
+          <!-- Item -->
+          <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:isuzucars' %}"><img src="{% static 'images/isuzu.jpg' %}" alt="Image"></a></div>
+          </div>
+        <!--   <div class="item">
+            <div class="logo-item"><a href="#"><img src="{% static 'images/mazda.png' %}" alt="Image"></a></div>
+          </div> -->
+             <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:mazdacars' %}"><img src="{% static 'images/mazda.png' %}" alt="Image"></a></div>
+          </div>
+             <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:lexuscars' %}"><img src="{% static 'images/lexus.jpg' %}" alt="Image"></a></div>
+          </div>
+             <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:audicars' %}"><img src="{% static 'images/audi.png' %}" alt="Image"></a></div>
+          </div>
+             <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:fordcars' %}"><img src="{% static 'images/ford.png' %}" alt="Image"></a></div>
+          </div>
+             <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:volvocars' %}"><img src="{% static 'images/volvo.png' %}" alt="Image"></a></div>
+          </div>
+             <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:jeepcars' %}"><img src="{% static 'images/jeep.png' %}" alt="Image"></a></div>
+          </div>
+             <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:hyundaicars' %}"><img src="{% static 'images/hyundai.png' %}" alt="Image"></a></div>
+          </div>
+             <div class="item">
+            <div class="logo-item"><a href="{% url 'cars:kiacars' %}"><img src="{% static 'images/kia.png' %}" alt="Image"></a></div>
+        <!--   </div>
+             <div class="item">
+            <div class="logo-item"><a href="#"><img src="{% static 'images/hino.png' %}" alt="Image"></a></div>
+          </div> -->
+          <!-- End Item --> 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+        <div class="our-features-box wow bounceInUp animated animated">
+        <div class="container">
+          <ul>
+            <li>
+              <div class="feature-box">
+                <div class="icon-truck"><img src="{% static 'images/nissan-logo.png' %}" alt="Image"></div>
+                <div class="content">
+                  <h6>{{num_of_nissan}} Cars</h6>
+                  <p>In Stock now</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="feature-box">
+                <div class="icon-support"><img src="{% static 'images/toyota-logo.png' %}" alt="Image"></div>
+                <div class="content">
+                  <h6>{{num_of_toyota}} Cars</h6>
+                  <p>In Stock now</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="feature-box">
+                <div class="icon-money"><img src="{% static 'images/bmw-logo.png' %}" alt="Image"></div>
+                <div class="content">
+                  <h6>{{num_of_bmw}} Cars</h6>
+                  <p>In Stock now</p>
+                </div>
+              </div>
+            </li>
+            <li class="last">
+              <div class="feature-box">
+                <div class="icon-return"><img src="{% static 'images/Audi-logo.png' %}" alt="Image"></div>
+                <div class="content">
+                  <h6>{{num_of_audi}} Cars</h6>
+                  <p>In Stock now</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+  {% endblock %}

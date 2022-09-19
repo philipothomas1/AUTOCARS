@@ -1,0 +1,546 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Kapandila Autos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Default Description">
+<meta name="keywords" content="fashion, store, E-commerce">
+<meta name="robots" content="*">
+<link rel="icon" href="#" type="image/x-icon">
+<link rel="shortcut icon" href="#" type="image/x-icon">
+
+<!-- CSS Style -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}" media="all">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-select.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/revslider.css' %}" >
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/jquery.bxslider.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/jquery.mobile-menu.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="all">
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" media="all">
+<link rel="stylesheet" type="text/css" href="{% static 'searchbtn.css' %}">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Saira+Condensed:300,400,500,600,700,800" rel="stylesheet">
+</head>
+<body>
+<div id="page">
+  <header>
+    <div class="container">
+      <div class="row">
+        <div id="header">
+          <div class="header-container">
+            <div class="header-logo"> <a href="{% url 'cars:home' %}" title="Kapandila Autos" class="logo">
+              <div><img src="{% static 'images/logo.png' %}" alt="Car Store"></div>
+              </a> </div>
+            <div class="header__nav">
+              <div class="header-banner">
+                <div class="col-lg-6 col-xs-12 col-sm-6 col-md-6">
+                  <div class="assetBlock">
+                    <div style="height: 20px; overflow: hidden;" id="slideshow">
+                      <p style="display: block;">Hurry! <span> limited offer! </span> Get ready for discount prices! </p>
+                      <p style="display: none;">Wauzaji magari <span> Tanzania</span></p>
+                    </div>
+                  </div>
+                </div>
+                {% for info in info %}
+                <div class="col-lg-6 col-lg-6 col-xs-12 col-sm-6 col-md-6 call-us"><i class="fa fa-clock-o"></i> From Monday - Sunday<i class="fa fa-phone"></i>{{ info.phone_number1 }}</div>{% endfor %}
+              </div>
+
+
+              <div class="fl-header-right">
+       <!--          <div class="fl-links">
+                  <div class="no-js"> <a title="" class="clicker"></a>
+                    <div class="fl-nav-links">
+                      <div class="language-currency">
+                        <div class="fl-language">
+                        <h3>Language</h3>
+                          <ul class="lang">
+                            <li><a href="#"> <img src="images/english.png" alt="English"> <span>English</span> </a></li>
+                            <li><a href="#"> <img src="images/francais.png" alt="French"> <span>French</span> </a></li>
+                            <li><a href="#"> <img src="images/german.png" alt="German"> <span>German</span> </a></li>
+                          </ul>
+                        </div>
+                      >
+                        <div class="fl-currency">
+                         <h3>Currency</h3>
+                          <ul class="currencies_list">
+                            <li><a href="#" title="EGP"> <strong>£</strong> Pound Sterling</a></li>
+                            <li><a href="#" title="EUR"> <strong>€</strong> Euro</a></li>
+                            <li><a href="#" title="USD"> <strong>$</strong> US Dollar</a></li>
+                          </ul>
+                        </div>
+                   
+                      </div>
+                       <h3>My Acount</h3>
+                      <ul class="links">
+                        <li><a href="login.html" title="My Account">Login</a></li>
+                        <li><a href="login.html" title="Wishlist">Register</a></li>
+                        </ul>
+                    </div>
+                  </div>
+                </div> -->
+
+       <!--          <div class="fl-cart-contain">
+                  <div class="mini-cart">
+                    <div class="basket"> <a href="shopping-cart.html"><span> 2 </span></a> </div>
+                    <div class="fl-mini-cart-content" style="display: none;">
+                      <div class="block-subtitle">
+                        <div class="top-subtotal">2 items, <span class="price">$259.99</span> </div>
+                        
+                      </div>
+                      
+                      <ul class="mini-products-list" id="cart-sidebar">
+                        <li class="item first">
+                          <div class="item-inner"><a class="product-image" title="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" href="#l"><img alt="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" src="products-images/p4.jpg"></a>
+                            <div class="product-details">
+                              <div class="access"><a class="btn-remove1" title="Remove This Item" href="#">Remove</a> <a class="btn-edit" title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a> </div>
+                              
+                              <strong>1</strong> x <span class="price">$179.99</span>
+                              <p class="product-name"><a href="accessories-detail.html">timi &amp; leslie Sophia Diaper Bag...</a></p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="item last">
+                          <div class="item-inner"><a class="product-image" title="JP Lizzy Satchel Designer Diaper Bag - Slate Citron" href="#"><img alt="JP Lizzy Satchel Designer Diaper Bag - Slate Citron" src="products-images/p3.jpg"></a>
+                            <div class="product-details">
+                              <div class="access"><a class="btn-remove1" title="Remove This Item" href="#">Remove</a> <a class="btn-edit" title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a> </div>
+                              
+                              <strong>1</strong> x <span class="price">$80.00</span>
+                              <p class="product-name"><a href="accessories-detail.html">JP Lizzy Satchel Designer Diaper Ba...</a></p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="actions">
+                        <button class="btn-checkout" title="Checkout" type="button" onClick="window.location=checkout.html"><span>Checkout</span></button>
+                      </div>
+                      
+                    </div>
+              
+                  </div>
+                </div> -->
+                
+                <div class="collapse navbar-collapse">
+                  <form method="GET" action="{% url 'cars:search_results' %}" class="navbar-form" >
+                    <div class="input-group">
+                      <input name="q" value="{{request.GET.q}}" class="form-control" type="text" placeholder="Search" style="    font-size: 18pt;
+    opacity: 0;
+    display: none;
+    height: 48px;
+      position: relative;
+    z-index: 2;
+    float: left;
+    display: table-cell;
+    opacity: 1;
+    z-index: 100;
+    border-radius: 0;
+    border: none;
+    line-height: 45px;
+    height: 67px;
+    font-size: 14px;
+    padding: 0px 25px;
+    width: 300px;
+    position: absolute;
+    right: 75px;
+  border-left:1px #e5e5e5 solid;
+  box-shadow:none">
+                      <span class="input-group-btn">
+                      <button type="submit" class="search-btn"> <span class="glyphicon glyphicon-search"> <span class="sr-only">Search</span> </span> </button>
+                      </span> </div>
+                  </form>
+                </div>
+                
+              </div>
+              <div class="fl-nav-menu">
+                <nav>
+                  <div class="mm-toggle-wrap">
+                    <div class="mm-toggle"><i class="fa fa-bars"></i><span class="mm-label">Menu</span> </div>
+                  </div>
+                  <div class="nav-inner"> 
+                    <!-- BEGIN NAV -->
+                    <ul id="nav" class="hidden-xs">
+                      <li class="active"> <a class="level-top" href="{% url 'cars:home' %}"><span>Home</span></a></li>
+                      <li class="mega-menu"> <a href="#" class="level-top"><span>Auto Parts</span></a>
+                        <div class="level0-wrapper dropdown-6col" style="left: 0px; display: none;">
+                          <div class="container">
+                            <div class="level0-wrapper2">
+                              <div class="nav-block nav-block-center"> 
+                                <!--mega menu-->
+                                <ul class="level0">
+                                  {% for auto in autoparts %}
+
+                                     <li class="level3 nav-6-1 parent item"> <a><span>{{auto.category}}</span></a>
+                                    <!--sub sub category-->
+                                    <ul class="level1">
+                                      <li class="level2 nav-6-1-1"> <a href="{{ auto.get_absolute_url }}"><span>{{auto.spare_parts_name}}</span></a> </li>
+                                      <!--level2 nav-6-1-1-->
+                                     
+                                      <!--level2 nav-6-1-1-->
+                                    
+                                      <!--level2 nav-6-1-1-->
+                                     
+                                      <!--level2 nav-6-1-1-->
+                                     
+                                      <!--level2 nav-6-1-1-->
+                                    </ul>
+                                    <!--level1--> 
+                                    <!--sub sub category--> 
+                                  </li>
+                                  {% endfor %}
+
+                                </ul>
+                                <!--level0--> 
+                              </div>
+                              <!--nav-block nav-block-center--> 
+                              
+                            </div>
+                            <!--level0-wrapper2--> 
+                          </div>
+                          <!--container--> 
+                        </div>
+                        <!--level0-wrapper dropdown-6col--> 
+                        <!--mega menu--> 
+                      </li>
+                
+                      
+                      <li class="fl-custom-tabmenulink mega-menu"> <a href="#" class="level-top"> <span>New Arrivals</span> </a>
+                        
+                        <div class="level0-wrapper fl-custom-tabmenu" style="left: 0px; display: none;">
+                          <div class="container">
+                            <div class="header-nav-dropdown-wrapper clearer">
+                              {% for newarrival in newarrivals %}
+                              <div class="grid12-3"><a href="{{ newarrival.get_absolute_url }}">
+                                <div><img src="{{ newarrival.car_main_image.url }}" alt="newarrivals"></div>
+                                <h4 class="heading">{{ newarrival.car_name }}</h4>
+                                <h4>TSH {{ newarrival.price }}</h4>
+                              </a>
+                              </div>
+                              {% endfor %}
+                              
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </li>
+                      
+                    </ul>
+                    <!--nav--> 
+                  </div>
+                </nav>
+              </div>
+            </div>
+            
+            <!--row--> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--container-->
+
+  {% block content %}
+  {% endblock %}
+
+    <!-- For version 1,2,3,4,6 -->
+  
+  <footer> 
+    <!-- BEGIN INFORMATIVE FOOTER -->
+    <div class="footer-inner">
+
+
+      <div class="container">
+        <div class="row">
+          {% for object in info %}
+          <div class="col-sm-4 col-xs-12 col-lg-4">
+            <div class="co-info">
+              <h4>CONTACT INFO</h4>
+              <address>
+              <div><span>{{ object.location }}, {{ object.street }}, <br>
+                Tanzania</span></div>
+              <div> <span>Call: <a href="tel:{{ object.phone_number1 }}">{{ object.phone_number1 }} </a></span></div>
+              <div> <span>Call: <a href="tel:{{ object.phone_number2 }}">{{ object.phone_number2 }} </a></span></div>
+              <div> <span>Email:<a href="mailto: {{ object.email }}"> {{ object.email }}</a></span></div>
+              <div> <span>Bank Account: {{ object.bank_account_number }}</span></div>    
+              <div> <span>Mon - Sund : 08am to 12am</span></div>
+              </address>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="col-sm-8 col-xs-12 col-lg-8">
+            <div class="footer-column">
+              <h4>SHOP BY MAKE</h4>
+              <ul class="links">
+                <li class="first"><a title="TOYOTA" href="{% url 'cars:toyotacars' %}">TOYOTA</a></li>
+                <li><a title="NISSAN" href="{% url 'cars:nissancars' %}">NISSAN</a></li>
+                <li><a title="SUBARU" href="{% url 'cars:subarucars' %}">SUBARU</a></li>
+                <li><a title="MERCEDES-BENZ" href="{% url 'cars:mercedesbenzcars' %}">MERCEDES-BENZ</a></li>
+                <li><a title="MITSUBISHI" href="{% url 'cars:mitsubishicars' %}">MITSUBISHI</a></li>
+                <li class="last"><a title="BMW" href="{% url 'cars:bmwcars' %}">BMW</a></li>
+                <li class="first"><a title="HONDA" href="{% url 'cars:hondacars' %}">HONDA</a></li>
+                <li><a title="SUZUKI" href="{% url 'cars:suzukicars' %}">SUZUKI</a></li>
+                <li><a title="VOLKSWAGEN" href="{% url 'cars:volkswagencars' %}">VOLKSWAGEN</a></li>
+                <li><a title="ISUZU" href="{% url 'cars:isuzucars' %}">ISUZU</a></li>
+                <li><a title="MAZDA" href="{% url 'cars:mazdacars' %}">MAZDA</a></li>
+                <li class="last"><a title="LEXUS" href="{% url 'cars:lexuscars' %}">LEXUS</a></li>
+                <li class="first"><a title="AUDI" href="{% url 'cars:audicars' %}">AUDI</a></li>
+                <li><a title="FORD" href="{% url 'cars:fordcars' %}">FORD</a></li>
+                <li><a title="VOLVO" href="{% url 'cars:volvocars' %}">VOLVO</a></li>
+                <li><a title="JEEP" href="{% url 'cars:jeepcars' %}">JEEP</a></li>
+                <li><a title="HYUNDAI" href="{% url 'cars:hyundaicars' %}">HYUNDAI</a></li>
+                <li class="last"><a title="KIA" href="{% url 'cars:kiacars' %}">KIA</a></li>
+                
+                <li class="last"><a title="KIA" href="{% url 'cars:landrovercars' %}">LANDROVER</a></li>
+               
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>HOW TO BUY</h4>
+              <ul class="links">
+                <li class="first">After choosing your favorite car and reviewing its specifications, Pay by using this Bank Account Number {% for object in info %}<b>{{ object.bank_account_number }}</b>{% endfor %}</li>
+               
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>BANK DETAILS</h4>
+              {% for object in info %}
+              <ul class="links">
+                <li class="first">Account Name: <b style="text-transform: uppercase;">{{ object.bank_account_name }}</b></li>
+                <li>Account Number: <b >{{ object.bank_account_number }}</b></li>
+
+              </ul>
+              {% endfor %}
+            </div>
+          </div>
+          
+          <!--col-sm-12 col-xs-12 col-lg-8--> 
+          <!--col-xs-12 col-lg-4--> 
+        </div>
+        <!--row--> 
+        
+      </div>
+      
+      <!--container--> 
+    </div>
+    <!--footer-inner-->
+    
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="social">
+              <ul>
+                <li class="fb"><a href="#"></a></li>
+                <li class="tw"><a href="#"></a></li>
+                <!-- <li><a><i class="fa fa-instagram" style="font-size:48px;color:red"></i></a></li> -->
+                <li class="instagram"><a href="#"></a></li>
+<!--                 <li class="rss"><a href="#"></a></li>
+                <li class="pintrest"><a href="#"></a></li>
+                <li class="linkedin"><a href="#"></a></li>
+                <li class="youtube"><a href="#"></a></li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-12 coppyright">Designed, Developed and Maintained by <a target="_blank" href="https://nullpointtechnologies.pythonanywhere.com/"> Philipo Thomas Kibiki</a></div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="payment-accept"> <img src="images/payment-1.png" alt=""> <img src="images/payment-2.png" alt=""> <img src="images/payment-3.png" alt=""> <img src="images/payment-4.png" alt=""> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BEGIN SIMPLE FOOTER --> 
+  </footer>
+  <!-- End For version 1,2,3,4,6 --> 
+  
+</div>
+<!--page--> 
+<!-- Mobile Menu-->
+<div id="mobile-menu">
+  <ul>
+
+     <li>
+      <div class="mm-search">
+        <form id="search1" method="GET" action="{% url 'cars:search_results' %}" name="search">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><i class="fa fa-search"></i> </button>
+            </div>
+            <input name="q" value="{{request.GET.q}}" type="text" class="form-control simple" placeholder="Search ..." name="srch-term" id="srch-term">
+          </div>
+        </form>
+      </div>
+    </li>
+     <li class="active"> <a class="level-top" href="{% url 'cars:home' %}"><span>Home</span></a></li>
+    <li><a>Auto Parts</a>
+      <!--mega menu-->
+                                <ul class="level0">
+                                  {% for auto in autoparts %}
+                                  <li class="level3 nav-6-1 parent item"> <a><span>{{auto.category}}</span></a> 
+                                    <!--sub sub category-->
+                                    <ul class="level1">
+                                      <li class="level2 nav-6-1-1"> <a href="{{ auto.get_absolute_url }}"><span>{{auto.spare_parts_name}}</span></a> </li>
+                                      <!--level2 nav-6-1-1-->
+
+                                      <!--level2 nav-6-1-1-->
+                                    </ul>
+                                    <!--level1--> 
+                                    <!--sub sub category--> 
+                                  </li>
+                                  {% endfor %}
+
+
+                                  <!--level3 nav-6-1 parent item-->
+                                </ul>
+                                <!--level0--> 
+
+
+    </li>
+
+    
+   </ul>
+</div>
+<!-- <div class="popup1" style="display: block;">
+  <div class="newsletter-sign-box">
+    <h3>Newsletter Sign up</h3>
+     <img src="images/close-icon.png" alt="close" class="x" onClick="HideMe();">
+    <div class="newsletter">
+      <div class="newsletter_img"> <img alt="newsletter" src="images/newsletter_img.png"></div>
+      <form method="post" id="popup-newsletter" name="popup-newsletter" class="email-form">
+        <h4>sign up for our exclusive email list and be the first to hear of special offers.</h4>
+        <div class="newsletter-form">
+          <div class="input-box">
+            <input type="text" name="email" id="newsletter2" title="Sign up for our newsletter" placeholder="Enter your email address" class="input-text required-entry validate-email">
+            <button type="submit" title="Subscribe" class="button subscribe"><span>Subscribe</span></button>
+          </div> -->
+          <!--input-box--> 
+        <!-- </div> -->
+        <!--newsletter-form-->
+      <!--   <label class="subscribe-bottom">
+          <input type="checkbox" name="notshowpopup" id="notshowpopup">
+          Don’t show this popup again</label>
+      </form> -->
+    <!-- </div> -->
+    <!--newsletter--> 
+    
+  <!-- </div> -->
+  <!--newsletter-sign-box--> 
+<!-- </div> -->
+<!-- <div id="fade" style="display: block;"></div> -->
+
+<!-- JavaScript --> 
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script> 
+<script src="{% static 'js/bootstrap-slider.min.js' %}"></script> 
+<script src="{% static 'js/bootstrap-select.min.js' %}"></script> 
+<script src="{% static 'js/cloud-zoom.js' %}"></script>
+<script src="{% static 'js/countdown.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/revslider.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/common.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/jquery.bxslider.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/jquery.mobile-menu.min.js' %}"></script> 
+<script src="{% static 'js/flexslider.js' %}"></script> 
+<script>
+        jQuery(document).ready(function(){
+            jQuery('#rev_slider_4').show().revolution({
+                dottedOverlay: 'none',
+                delay: 5000,
+                startwidth: 1170,
+              startheight:650,
+
+                hideThumbs: 200,
+                thumbWidth: 200,
+                thumbHeight: 50,
+                thumbAmount: 2,
+
+                navigationType: 'thumb',
+                navigationArrows: 'solo',
+                navigationStyle: 'round',
+
+                touchenabled: 'on',
+                onHoverStop: 'off',
+                
+                swipe_velocity: 0.7,
+                swipe_min_touches: 1,
+                swipe_max_touches: 1,
+                drag_block_vertical: false,
+            
+                spinner: 'spinner0',
+                keyboardNavigation: 'off',
+
+                navigationHAlign: 'center',
+                navigationVAlign: 'bottom',
+                navigationHOffset: 0,
+                navigationVOffset: 20,
+
+                soloArrowLeftHalign: 'left',
+                soloArrowLeftValign: 'center',
+                soloArrowLeftHOffset: 20,
+                soloArrowLeftVOffset: 0,
+
+                soloArrowRightHalign: 'right',
+                soloArrowRightValign: 'center',
+                soloArrowRightHOffset: 20,
+                soloArrowRightVOffset: 0,
+
+                shadow: 0,
+                fullWidth: 'on',
+                fullScreen: 'off',
+
+                stopLoop: 'off',
+                stopAfterLoops: -1,
+                stopAtSlide: -1,
+
+                shuffle: 'off',
+
+                autoHeight: 'off',
+                forceFullWidth: 'on',
+                fullScreenAlignForce: 'off',
+                minFullScreenHeight: 0,
+                hideNavDelayOnMobile: 1500,
+            
+                hideThumbsOnMobile: 'off',
+                hideBulletsOnMobile: 'off',
+                hideArrowsOnMobile: 'off',
+                hideThumbsUnderResolution: 0,
+
+                hideSliderAtLimit: 0,
+                hideCaptionAtLimit: 0,
+                hideAllCaptionAtLilmit: 0,
+                startWithSlide: 0,
+                fullScreenOffsetContainer: ''
+            });
+        });
+        </script> 
+<!-- <script type="text/javascript">
+    function HideMe()
+    {
+        jQuery('.popup1').hide();
+        jQuery('#fade').hide();
+    }
+</script> --> 
+<script>
+      var dthen1 = new Date("12/25/17 11:59:00 PM");
+      start = "08/04/15 03:02:11 AM";
+      start_date = Date.parse(start);
+      var dnow1 = new Date(start_date);
+      if (CountStepper > 0)
+      ddiff = new Date((dnow1) - (dthen1));
+      else
+      ddiff = new Date((dthen1) - (dnow1));
+      gsecs1 = Math.floor(ddiff.valueOf() / 1000);
+      
+      var iid1 = "countbox_1";
+      CountBack_slider(gsecs1, "countbox_1", 1);
+    </script>
+</body>
+
+</html>

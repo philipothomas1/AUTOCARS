@@ -1,0 +1,178 @@
+  {% extends 'base.html' %}
+  {% load static %}
+  {% block content %}
+
+
+
+<!-- <div id="page"> -->
+
+
+  <!-- BEGIN Main Container -->
+  <div class="main-container col1-layout wow bounceInUp animated">
+    <div class="main">
+      <div class="col-main"> 
+        <!-- Endif Next Previous Product -->
+        <div class="product-view wow bounceInUp animated" itemscope="" itemtype="http://schema.org/Product" itemid="#product_base">
+          <div id="messages_product_view"></div>
+          <!--product-next-prev-->
+          <div class="product-essential container">
+            <div class="row">
+              <form action="#" method="post" id="product_addtocart_form">
+                <!--End For version 1, 2, 6 --> 
+                <!-- For version 3 -->
+                <div class="product-img-box col-lg-5 col-sm-5 col-xs-12">
+                  <div class="new-label new-top-left">Hot</div>
+                  <div class="sale-label sale-top-left">-15%</div>
+                  <div class="product-image">
+                    <div class="product-full"> <img id="product-zoom1" src="{{ detail.auto_part_image.url }}" data-zoom-image="{{ detail.auto_part_image.url }}" alt="product-image"/> </div>
+
+                  </div>
+                  <!-- end: more-images --> 
+                  {% for info in info %}
+                  <div class="toll-free"><a onClick="ShowMe1();" style="color:black"><i class="fa fa-money"></i>BANK ACCOUNT: {{ info.bank_account_number }}</a></div>
+                  <div class="request-call"><a href="tel: {{ info.phone_number1 }}" style="color:black"><i class="fa fa-phone"></i>CALL: {{ info.phone_number1 }}</a></div>
+                  <div class="request-call"><a href="tel: {{ info.phone_number2 }}" style="color:black"><i class="fa fa-phone"></i>CALL: {{ info.phone_number2 }}</a></div>
+
+                  
+                  
+                  {% endfor %}
+
+                  
+                </div>
+                <!--End For version 1,2,6--> 
+                <!-- For version 3 -->
+                <div class="product-shop col-lg- col-sm-7 col-xs-12">
+                  <div class="brand">{{ detail.make }}</div>
+                  <div class="product-name">
+                    <h1 style="text-transform: uppercase;">{{ detail.spare_parts_name }}</h1>
+                  </div>
+            
+                  <div class="price-block">
+                    <div class="price-box">
+                     
+                      <p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price">TSH {{ detail.price }} </span> </p>
+                    </div>
+                  </div>
+                 
+                   <div class="spec-row" id="summarySpecs">
+                  <h2>Specifications</h2>
+                    <table width="100%">
+                      <tbody>
+                        <tr>
+                          <td class="label-spec"> Make <span class="coln">:</span></td>
+                          <td class="value-spec"> {{ detail.make }} </td>
+                        </tr>
+                        <tr>
+                          <td class="label-spec"> Condition <span class="coln">:</span></td>
+                          <td class="value-spec"> {{ detail.condition }} </td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="label-spec"> Category <span class="coln">:</span></td>
+                          <td class="value-spec"> {{ detail.category }} </td>
+                        </tr>
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                   {% for info in info %}
+                  <div class="spec-row" id="summarySpecs">
+                  <h2>PAYMENT AND CONTACT INFO</h2>
+                    <table width="100%">
+                      <tbody>
+                        <tr>
+                          <td class="label-spec" style="font-weight: bold;"> Bank Account <span class="coln">:</span></td>
+                          <td class="value-spec" style="font-weight: bold;"> {{ info.bank_account_number }}</td>
+                        </tr>
+                        <tr>
+                          <td class="label-spec" style="font-weight: bold;"> Account Name <span class="coln">:</span></td>
+                          <td class="value-spec" style="font-weight: bold;"> {{ info.bank_account_name }} </td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="label-spec" style="font-weight: bold;"> Call <span class="coln">:</span></td>
+                          <td class="value-spec" style="font-weight: bold;">{{ info.phone_number1 }} </td>
+                        </tr>
+                         <tr class="odd">
+                          <td class="label-spec" style="font-weight: bold;"> Call <span class="coln">:</span></td>
+                          <td class="value-spec" style="font-weight: bold;">{{ info.phone_number2 }} </td>
+                        </tr>
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                   {% endfor %}
+             <!--      <div class="email-addto-box">
+                    <ul class="add-to-links">
+                      <li> <a class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a></li>
+                      <li><a class="link-compare" href="compare.html"><span>Add to Compare</span></a></li>
+                    </ul>
+                    <p class="email-friend"><a href="#" class=""><span>Email to a Friend</span></a></p>
+                  </div> -->
+           <!--        <div class="social">
+                    <ul class="link">
+                      <li class="fb"><a href="#"></a></li>
+                      <li class="tw"><a href="#"></a></li>
+                      <li class="googleplus"><a href="#"></a></li>
+                      <li class="rss"><a href="#"></a></li>
+                      <li class="pintrest"><a href="#"></a></li>
+                      <li class="linkedin"><a href="#"></a></li>
+                      <li class="youtube"><a href="#"></a></li>
+                    </ul>
+                  </div> -->
+               <!--    <ul class="shipping-pro">
+                    <li>Free Servicing</li>
+                    <li>Free Monthly Checkup</li>
+                    <li>Extended Warrenty</li>
+                  </ul> -->
+                </div>
+                <!--product-shop--> 
+                <!--Detail page static block for version 3-->
+              </form>
+            </div>
+          </div>
+          <!--product-essential-->
+          <div class="product-collateral container">
+            <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
+              <li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Spare Overview </a> </li>
+              <li> <a href="#product_tabs_custom1" data-toggle="tab">How To Pay</a> </li>
+
+            </ul>
+            <div id="productTabContent" class="tab-content">
+              <div class="tab-pane fade in active" id="product_tabs_description">
+                <div class="std">
+                  <p>{{ detail.description }}</p>
+                 
+                </div>
+              </div>
+                   <div class="tab-pane fade" id="product_tabs_custom1">
+                {% for info in info %}
+                <div class="product-tabs-content-inner clearfix">
+                  <p>After choosing your favorite car and reviewing its specifications, Pay by using this Bank Account Number<a style="font-weight: bolder; font-size: 20px"> {{ info.bank_account_number }}.</a></p>
+                  
+                </div>
+                {% endfor %}
+              </div>
+
+
+
+          
+            </div>
+          </div>
+          
+          <!--product-collateral-->
+
+          <!-- end related product --> 
+        </div>
+        <!--box-additional--> 
+        <!--product-view--> 
+      </div>
+    </div>
+    <!--col-main--> 
+  </div>
+  <!--main-container--> 
+ {% endblock %}
+<!--col1-layout--> 
+
+<!-- For version 1,2,3,4,6 -->
+ 
